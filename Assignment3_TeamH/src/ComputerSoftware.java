@@ -1,14 +1,16 @@
 
-public class Item {
+public class ComputerSoftware extends Item{
 	private String title;
 	private double price;
 	
-	public Item(String title, double price) {
+	public ComputerSoftware(String title, double price) {
+		super(title, price);
 		this.title = title;
 		this.price = price;
 	}
 
 	public String getTitle() {
+		//System.out.println("now in computersoftware's getTitle");
 		return title;
 	}
 
