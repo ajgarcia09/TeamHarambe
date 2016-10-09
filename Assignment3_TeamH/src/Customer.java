@@ -1,17 +1,51 @@
+import java.util.HashSet;
+import java.util.Iterator;
 
 public class Customer extends User{
-	private String homeAdress;
+	private String homeAddress;
+	HashSet<CreditCard> cardList = new HashSet<CreditCard>();	
 
-	public Customer() {
-		super();
-		// TODO Auto-generated constructor stub
+
+	public Customer(String name, String userName, String password, String homeAddress) {
+		super(name, userName, password);
+		this.homeAddress = homeAddress;
+		//		cardList.add(c);
+	}
+
+	public void addCreditCard(CreditCard c){
+		if(cardList.size()>=1 || cardList.size() == 0){
+			cardList.add(c);
+			System.out.println("card added successfully");
+			return;
+		}
+		else{
+			System.out.println("Cannot remove. Must have at least 1 credit"
+					+ "card on record.");
+		}				
 	}
 	
-	public addToCart(Item t){
+	public void printCardList(){
+		for(Iterator it=cardList.iterator(); it.hasNext();){
+			CreditCard c = (CreditCard)it.next();
+			System.out.println("Credit card # " + c.getNumber());
+			System.out.println("Expiration date: "+ c.getExpirationDate());
+			//System.out.println("");
+		}
+	}
+
+	public String getHomeAddress() {
+		return homeAddress;
+	}
+
+	public void setHomeAddress(String homeAddress) {
+		this.homeAddress = homeAddress;
+	}
+
+	public void addToCart(Item t){
 		System.out.println("addToCart");
 	}
-	
-	public checkoutCart(){
+
+	public void checkoutCart(){
 		System.out.println("checkoutCart");
 	}
 

@@ -6,21 +6,25 @@ public class User {
 	
 	
 	public User(String name, String userName, String password) {
-		super();
 		this.name = name;
 		this.userName = userName;
 		this.password = password;
 	}
 	
 	public String getName() {
+		//System.out.println("in user superclass");
 		return name;
 	}
 	public String getUserName() {
+		//System.out.println("in user superclass");
+
 		return userName;
 	}
-//	public String getPassword() {
-//		return password;
-//	}
+	public String getPassword() {
+		//System.out.println("in user superclass");
+
+		return password;
+	}
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -31,11 +35,11 @@ public class User {
 		this.password = password;
 	}
 	
-	public browseItem(){
+	public void browseItem(){
 		System.out.println("browseItem");
 	}
 	
-	public register(){
+	public void register(){
 		System.out.println("register");
 	}
 	

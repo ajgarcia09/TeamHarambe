@@ -1,36 +1,38 @@
 
 public class Manager extends User{
-	private String employerID;
+	private String employeeID;
 
-	public Manager(String name, String userName, String password, String employerID) {
+	public Manager(String name, String userName, String password, String employeeID) {
 		super(name, userName, password);
-		this.employerID = employerID;
-		// TODO Auto-generated constructor stub
+		this.employeeID = employeeID;
 	}
 	
-	public createItem(){
+	public void createItem(){
 		System.out.println("createItem");
 	}
 	
-	public updateItem(Item t){
+	public void updateItem(Item t){
 		System.out.println("updateItem");
 	}
 	
-	public deleteItem(Item t){
+	public void deleteItem(Item t){
 		System.out.println("deleteItem");
 	}
 	
-	public createCustomer(Customer c){
+	public void createCustomer(Customer c){
 		System.out.println("createCustomer");
 	}
 	
-	public updateCustomer(Customer c){
+	public void updateCustomer(Customer c){
 		System.out.println("updateCustomer");
 	}
 	
-	public deleteCustomer(Customer c){
+	public void deleteCustomer(Customer c){
 		System.out.println("deleteCustomer");
 	}
-	
+
+	public String getEmployeeID() {
+		return employeeID;
+	}
 
 }
