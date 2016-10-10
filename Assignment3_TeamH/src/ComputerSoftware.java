@@ -3,8 +3,8 @@ public class ComputerSoftware extends Item{
 	private String title;
 	private double price;
 	
-	public ComputerSoftware(String title, double price) {
-		super(title, price);
+	public ComputerSoftware(String title,String itemType, double price) {
+		super(itemType, price);
 		this.title = title;
 		this.price = price;
 	}

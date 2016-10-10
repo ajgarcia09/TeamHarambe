@@ -2,8 +2,8 @@
 public class MusicCD extends Item{
 	private String title;
 	private double price;
-	public MusicCD(String title, double price) {
-		super(title, price);
+	public MusicCD(String title, String itemType, double price) {
+		super(itemType, price);
 		this.title = title;
 		this.price = price;
 	}

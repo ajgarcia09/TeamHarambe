@@ -15,7 +15,4 @@ public class RemindersAlarm {
 	public void setAlarmOn(boolean alarmOn) {
 		this.alarmOn = alarmOn;
 	}
-	
-	
-
 }

@@ -8,7 +8,7 @@ public class Item {
 		this.price = price;
 	}
 
-	public String getTitle() {
+	public String getItemType() {
 		return title;
 	}
 

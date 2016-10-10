@@ -43,16 +43,16 @@ public class Customer extends User{
 	
 	public void addToCart(Item t){
 		shoppingCart.add(t);
-		System.out.println("Item " + t.getTitle() + " was added to cart");
+		//System.out.println("Item " + t.getTitle() + " was added to cart");
 	}
 	
 	
 
 	public void printCartContents(){
 		for(Iterator it=shoppingCart.iterator(); it.hasNext();){
-			System.out.println("Printing cart contents");
+			//System.out.println("Printing cart contents");
 			Item item = (Item)it.next();
-			System.out.println("Item " + item.getTitle());
+			//System.out.println("Item " + item.getTitle());
 			System.out.println("Price: "+ item.getPrice());
 			//System.out.println("");
 		}		//System.out.println("addToCart");

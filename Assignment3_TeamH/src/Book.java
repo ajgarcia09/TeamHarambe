@@ -3,8 +3,8 @@ public class Book extends Item{
 	private String title;
 	private double price;
 
-	public Book(String title, double price) {
-		super(title, price);
+	public Book(String title, String itemType, double price) {
+		super(itemType, price);
 		this.title = title;
 		this.price = price;
 	}

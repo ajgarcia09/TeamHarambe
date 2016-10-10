@@ -20,17 +20,20 @@ public class EStore {
 		System.out.println(manager1.getEmployeeID());
 		System.out.println();
 		
-		Book book1 = new Book("The Old Man and the Sea",10.00);
+		Book book1 = new Book("The Old Man and the Sea","Book", 10.00);
+		System.out.println(book1.getItemType());
 		System.out.println(book1.getTitle());
 		System.out.println(book1.getPrice());
 		System.out.println();
 		
-		MusicCD cd1 = new MusicCD("Absolution",20.00);
+		MusicCD cd1 = new MusicCD("Absolution","CD",20.00);
+		System.out.println(cd1.getItemType());
 		System.out.println(cd1.getTitle());
 		System.out.println(cd1.getPrice());
 		System.out.println();
 		
-		ComputerSoftware sw1 = new ComputerSoftware("VMware",200.00);
+		ComputerSoftware sw1 = new ComputerSoftware("VMware","Software",200.00);
+		System.out.println(sw1.getItemType());
 		System.out.println(sw1.getTitle());
 		System.out.println(sw1.getPrice());
 		System.out.println();
@@ -39,6 +42,7 @@ public class EStore {
 		customer1.addToCart(cd1);
 		customer1.addToCart(sw1);
 		customer1.printCartContents();
+		//Cart.calculateCombinedPrice();
 		
 	}
 }
