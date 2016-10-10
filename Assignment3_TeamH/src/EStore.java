@@ -42,7 +42,7 @@ public class EStore {
 		customer1.addToCart(cd1);
 		customer1.addToCart(sw1);
 		customer1.printCartContents();
-		//Cart.calculateCombinedPrice();
+		System.out.println(customer1.shoppingCart.calculateCombinedPrice());
 		
 	}
 }

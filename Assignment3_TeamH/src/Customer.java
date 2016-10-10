@@ -3,12 +3,13 @@ import java.util.Iterator;
 
 public class Customer extends User{
 	private String homeAddress;
+	Cart shoppingCart;
 	HashSet<CreditCard> cardList = new HashSet<CreditCard>();
-	HashSet<Item> shoppingCart = new HashSet<Item>();
 
 	public Customer(String name, String userName, String password, String homeAddress) {
 		super(name, userName, password);
 		this.homeAddress = homeAddress;
+		shoppingCart = new Cart();
 		//		cardList.add(c);
 	}
 
@@ -23,7 +24,7 @@ public class Customer extends User{
 					+ "card on record.");
 		}				
 	}
-	
+
 	public void printCardList(){
 		for(Iterator it=cardList.iterator(); it.hasNext();){
 			CreditCard c = (CreditCard)it.next();
@@ -40,26 +41,17 @@ public class Customer extends User{
 	public void setHomeAddress(String homeAddress) {
 		this.homeAddress = homeAddress;
 	}
-	
-	public void addToCart(Item t){
-		shoppingCart.add(t);
-		//System.out.println("Item " + t.getTitle() + " was added to cart");
-	}
-	
-	
 
-	public void printCartContents(){
-		for(Iterator it=shoppingCart.iterator(); it.hasNext();){
-			//System.out.println("Printing cart contents");
-			Item item = (Item)it.next();
-			//System.out.println("Item " + item.getTitle());
-			System.out.println("Price: "+ item.getPrice());
-			//System.out.println("");
-		}		//System.out.println("addToCart");
-	}
+	public void addToCart(Item t){
+		shoppingCart.addToCart(t);
+	}	
 
 	public void checkoutCart(){
 		System.out.println("checkoutCart");
+	}
+
+	public void printCartContents() {
+		shoppingCart.printCartContents();		
 	}
 
 }
