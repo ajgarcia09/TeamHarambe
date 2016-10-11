@@ -1,10 +1,10 @@
 
 public class Manager extends User{
-	private String employeeID;
+	private String employerID;
 
-	public Manager(String name, String userName, String password, String employeeID) {
+	public Manager(String name, String userName, String password, String employerID) {
 		super(name, userName, password);
-		this.employeeID = employeeID;
+		this.employerID = employerID;
 	}
 	
 	public void createItem(){
@@ -31,8 +31,8 @@ public class Manager extends User{
 		System.out.println("deleteCustomer");
 	}
 
-	public String getEmployeeID() {
-		return employeeID;
+	public String getEmployerID() {
+		return employerID;
 	}
 
 }

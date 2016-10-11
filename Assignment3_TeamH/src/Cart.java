@@ -1,6 +1,11 @@
 import java.util.HashSet;
 import java.util.Iterator;
 
+/*used in the Customer Class,
+ * Only one cart per customer.
+ * A cart is represented by a HashSet 
+ * that contains objects of type Item.
+ */
 public class Cart {
 	HashSet<Item> shoppingCart;
 
@@ -13,6 +18,9 @@ public class Cart {
 		System.out.println("Item " + t.getItemType() + " was added to cart");
 	}
 
+	/* Use an iterator to traverse the HashSet,
+	 * access each item's price and compute the total price
+	 */
 	public double calculateCombinedPrice(){
 		double totalPrice = 0.0;
 		for(Iterator it=shoppingCart.iterator(); it.hasNext();){
@@ -23,15 +31,14 @@ public class Cart {
 	}
 	
 	public void printCartContents(){
+		System.out.println("Cart contents are");
+		System.out.println();
 		for(Iterator it=shoppingCart.iterator(); it.hasNext();){
-			//System.out.println("Printing cart contents");
 			Item item = (Item)it.next();
 			System.out.println("Item is a  " + item.getItemType());
-			//System.out.println("Title" + item.getTitle());
 			System.out.println("Price: "+ item.getPrice());
 		}		
 	}
-
 	public void orderByPrice(){
 		System.out.println("orderByPrice");
 	}

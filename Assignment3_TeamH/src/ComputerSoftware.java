@@ -4,7 +4,7 @@ public class ComputerSoftware extends Item{
 	private double price;
 	
 	public ComputerSoftware(String title,String itemType, double price) {
-		super(itemType, price);
+		super(itemType, price); //calls the constructor in the superclass (User)
 		this.title = title;
 		this.price = price;
 	}

@@ -3,7 +3,7 @@ public class MusicCD extends Item{
 	private String title;
 	private double price;
 	public MusicCD(String title, String itemType, double price) {
-		super(itemType, price);
+		super(itemType, price); //calls the constructor in the superclass (User)
 		this.title = title;
 		this.price = price;
 	}

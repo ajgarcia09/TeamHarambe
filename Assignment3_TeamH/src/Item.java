@@ -1,27 +1,30 @@
 
 public class Item {
-	private String title;
+	private String itempType;
 	private double price;
 	
-	public Item(String title, double price) {
-		this.title = title;
+	public Item(String itempType, double price) {
+		this.itempType = itempType;
 		this.price = price;
 	}
 
 	public String getItemType() {
-		return title;
+		return itempType;
 	}
 
 	public double getPrice() {
 		return price;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setitempType(String itempType) {
+		this.itempType = itempType;
 	}
 
 	public void setPrice(double price) {
 		this.price = price;
 	}
 	
+	public void printItemType(){
+		System.out.println("Item type is: "+ getItemType());
+	}	
 }
