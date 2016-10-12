@@ -31,6 +31,13 @@ public class Customer extends User{
 			System.out.println("Expiration date: "+ c.getExpirationDate());
 		}
 	}
+	
+	public void printCustomerInfo(){
+		System.out.println("Name: " + getName());
+		System.out.println("Username: " + getUserName());
+		System.out.println("Password: " + getPassword());
+		System.out.println("Home Address: " + getHomeAddress());
+	}
 
 	public String getHomeAddress() {
 		return homeAddress;

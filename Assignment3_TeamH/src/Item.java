@@ -1,30 +1,41 @@
 
 public class Item {
-	private String itempType;
+	private String title;
 	private double price;
 	
-	public Item(String itempType, double price) {
-		this.itempType = itempType;
+	public Item(String title, double price) {
+		this.title = title;
 		this.price = price;
 	}
 
-	public String getItemType() {
-		return itempType;
+	public String getTitle() {
+		return title;
 	}
 
 	public double getPrice() {
 		return price;
 	}
 
-	public void setitempType(String itempType) {
-		this.itempType = itempType;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public void setPrice(double price) {
 		this.price = price;
 	}
 	
-	public void printItemType(){
-		System.out.println("Item type is: "+ getItemType());
+	public void printTitle(){
+		System.out.println("Item type is: "+ getTitle());
 	}	
+	
+	/*Displays the type of item, for instance: 
+	 * The Old Man and the Sea is of class Book
+	 * Absolution is of class MusicCD
+	 * VMware is of class ComputerSoftware 
+	 */
+	public void printItemType(Item item1){
+		System.out.println(item1.getTitle() + " "
+				+ "is of " +  item1.getClass());
+		
+	}
 }

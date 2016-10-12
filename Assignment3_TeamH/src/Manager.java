@@ -7,6 +7,13 @@ public class Manager extends User{
 		this.employerID = employerID;
 	}
 	
+	public void printManagerInfo(){
+		System.out.println("Manager: " + getName());
+		System.out.println("Username: " + getUserName());
+		System.out.println("Password: " + getPassword());
+		System.out.println("EmployerID: " + getEmployerID());
+	}
+	
 	public void createItem(){
 		System.out.println("createItem");
 	}

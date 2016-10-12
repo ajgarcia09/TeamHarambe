@@ -15,7 +15,7 @@ public class Cart {
 
 	public void addToCart(Item t){
 		shoppingCart.add(t);
-		System.out.println("Item " + t.getItemType() + " was added to cart");
+		System.out.println("Item " + t.getTitle() + " was added to cart");
 	}
 
 	/* Use an iterator to traverse the HashSet,
@@ -35,10 +35,16 @@ public class Cart {
 		System.out.println();
 		for(Iterator it=shoppingCart.iterator(); it.hasNext();){
 			Item item = (Item)it.next();
-			System.out.println("Item is a  " + item.getItemType());
+			System.out.println("Item is a  " + item.getTitle());
 			System.out.println("Price: "+ item.getPrice());
 		}		
 	}
+	
+	public void printCustomerID(Customer customer1){
+		System.out.println("Customer Name: " + customer1.getName());
+		System.out.println("Username: " +customer1.getUserName());
+	}
+	
 	public void orderByPrice(){
 		System.out.println("orderByPrice");
 	}
