@@ -41,5 +41,4 @@ public class Manager extends User{
 	public String getEmployerID() {
 		return employerID;
 	}
-
 }

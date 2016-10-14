@@ -25,10 +25,13 @@ public class Customer extends User{
 
 	//Use an Iterator to traverse the HashSet
 	public void printCardList(){
+		System.out.println("Cards on record for " + getName() + ": ");
+		System.out.println();
 		for(Iterator it=cardList.iterator(); it.hasNext();){
 			CreditCard c = (CreditCard)it.next();
 			System.out.println("Credit card # " + c.getNumber());
 			System.out.println("Expiration date: "+ c.getExpirationDate());
+			System.out.println("CVS: " + c.getCVS());
 		}
 	}
 	

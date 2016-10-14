@@ -35,7 +35,7 @@ public class Item {
 	 */
 	public void printItemType(Item item1){
 		System.out.println(item1.getTitle() + " "
-				+ "is of " +  item1.getClass());
+				+ "is of type " +  item1.getClass().getTypeName());
 		
 	}
 }

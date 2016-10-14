@@ -19,6 +19,10 @@ public class CreditCard {
 		return expirationDate;
 	}
 	
+	public int getCVS(){
+		return CVS;
+	}
+	
 	
 	
 

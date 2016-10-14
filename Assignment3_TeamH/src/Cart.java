@@ -16,6 +16,7 @@ public class Cart {
 	public void addToCart(Item t){
 		shoppingCart.add(t);
 		System.out.println("Item " + t.getTitle() + " was added to cart");
+		System.out.println();
 	}
 
 	/* Use an iterator to traverse the HashSet,
@@ -31,11 +32,11 @@ public class Cart {
 	}
 	
 	public void printCartContents(){
-		System.out.println("Cart contents are");
+		System.out.println("Cart contents are: ");
 		System.out.println();
 		for(Iterator it=shoppingCart.iterator(); it.hasNext();){
 			Item item = (Item)it.next();
-			System.out.println("Item is a  " + item.getTitle());
+			System.out.println("Item: " + item.getTitle());
 			System.out.println("Price: "+ item.getPrice());
 		}		
 	}
