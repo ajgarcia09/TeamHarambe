@@ -21,11 +21,11 @@ public class Account {
 				System.out.println("Enter 2 to create account");
 				System.out.println("Enter any other number to exit program");
 				int operation = input.nextInt();
-				if(operation == 1){
+				if(operation == 1){//if user wants to sign in
 					 getAccountID2();
 					int signInn = id;
 					if(id != 0)
-						System.out.println("You have signed inn. This is your user ID:" + signInn);
+						System.out.println("You have signed in. This is your user ID:" + signInn);
 					    System.out.println(" ");
 					}
 				else if(operation == 2){
@@ -36,7 +36,8 @@ public class Account {
 				}
 			}
 	}
-
+	
+	//user wants to sign in 
 	public static void getAccountID2() throws FileNotFoundException{
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter your email: ");
@@ -65,6 +66,7 @@ public class Account {
 					readFile.close();
 					return 0;
 				}
+				//validate email and password
 				if(email2.equals(email) && password2.equals(password)){
 					readFile.close();
 					return id;

@@ -109,8 +109,7 @@ public class SetFitnesGoals {
 	private static void runWorkout() {
 		System.out.println("How many Kilometers will you run?");
 		int runKm = scan.nextInt();
-		numKmGoal = runKm;
-		
+		numKmGoal = runKm;		
 	}
 
 	private static void swimWorkout() {
