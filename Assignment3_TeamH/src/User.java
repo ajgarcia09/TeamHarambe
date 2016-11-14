@@ -32,6 +32,7 @@ public class User {
 	private static int numWeekSteps;
 	private ActivityLogger activityLogger = new ActivityLogger(accountID);
 	private HashSet<Activity> activities = new HashSet<Activity>();
+	//TODO ArrayList instead of HashSet?
 	private HashSet<DailyTrend> dailyTrends = new HashSet<DailyTrend>();
 	private HashSet<WeeklyTrend> weeklyTrends = new HashSet<WeeklyTrend>();
 	private HashSet<MonthlyTrend> MonthlyTrends = new HashSet<MonthlyTrend>();
@@ -229,10 +230,14 @@ public class User {
 	
 	public void printDailyTrends(){
 		System.out.println("entered printDailyTrends");
+		System.out.println();
 		for(Iterator it = dailyTrends.iterator(); it.hasNext();){
 			DailyTrend currentDayTrend = (DailyTrend)it.next();
+			System.out.println("user: " + this.getName());
 			System.out.println("accountID = " + currentDayTrend.getAccountID());
+			System.out.println("month + date = " + currentDayTrend.getDate() + " " + currentDayTrend.getMonth());
 			System.out.println("sleepTime = " + currentDayTrend.getSleepTime());
+			System.out.println("workoutTime = " + currentDayTrend.getWorkoutTime());
 			System.out.println("numSteps = " + currentDayTrend.getNumSteps());
 		}
 	}	
@@ -247,7 +252,7 @@ public class User {
 	 * @see User#numDayTrends
 	 * @see newWeeklyTrend()
 	 */
-	private void validateNumDayTrends() {
+	private void validateNumDayTrends() { //TODO add each 
 		System.out.println("entered validateNumDayTrends");
 		if(numDayTrends >= 0 && numDayTrends <7)
 			numDayTrends++;
@@ -255,7 +260,8 @@ public class User {
 			newWeeklyTrend();
 			numWeekTrends++;
 			numDayTrends=0;
-		}		
+		}
+		System.out.println("numDayTrends = " + numDayTrends);
 	}
 	
 	/**Adds the user's total sleep time within
@@ -270,7 +276,7 @@ public class User {
 		for(Iterator it = activities.iterator(); it.hasNext();){
 			Activity currentActivity = (Activity)it.next();
 			System.out.println("currentActivity is of type: ");
-			currentActivity.getClass().getTypeName();
+			System.out.println(currentActivity.getClass().getTypeName());
 			if(currentActivity.getClass().getTypeName().equals("Sleep")){
 				daySleep += currentActivity.getDuration();
 				System.out.println("daySleep = " + daySleep);
@@ -292,9 +298,9 @@ public class User {
 		for(Iterator it = activities.iterator(); it.hasNext();){
 			Activity currentActivity = (Activity)it.next();
 			currentActivity.printActivityType(currentActivity);
-			System.out.println("current activitie's duration: " + currentActivity.getDuration());
+			System.out.println("current activity's duration: " + currentActivity.getDuration());
 			System.out.println(currentActivity.getClass().getSuperclass());
-			if(currentActivity.getClass().getSuperclass().equals("Workout")){
+			if(currentActivity.getClass().getSuperclass().getTypeName().equals("Workout")){
 				System.out.println("entered if statement in workout");
 				dayWorkout += currentActivity.getDuration();
 				System.out.println("dayWorkout = " + dayWorkout);

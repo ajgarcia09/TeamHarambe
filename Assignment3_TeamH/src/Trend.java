@@ -55,6 +55,9 @@ public class Trend {
 		return numSteps;
 	}
 
+	public String getMonth() {
+		return month;
+	}
 	public void setAccountID(int accountID) {
 		this.accountID = accountID;
 	}
