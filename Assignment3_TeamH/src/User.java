@@ -117,6 +117,10 @@ public class User {
 		activities.remove(a1);
 	}
 	
+	/**Print the user's logged activities
+	 * by traversing its HashSet of type Activity
+	 * @see #activityLogger
+	 */
 	public void printActivities(){
 		System.out.println("User's logged activites: ");
 		for(Iterator it = activities.iterator(); it.hasNext();){

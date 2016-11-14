@@ -4,26 +4,26 @@ import java.util.Scanner;
  * account. Each user has one ActivityLogger
  * @author Ana J. Garcia
  * @version 1.0 (11/11/2016)
- * @see User.java
- * @see Activity.java 
+ * @see User
+ * @see Activity
  *
  */
 public class ActivityLogger {
 	private int accountID;
 	public Scanner userInput = new Scanner(System.in);
-
 	public ActivityLogger(int accountID) {
 		this.accountID = accountID;
 	}
-/**Return an Activity logged by the user 
- * @return an instance of Activity (Workout or Sleep) 
- * 		   or null if there was an error logging in an activity
- * @see logWorkout()
- * @see logSleep()
- * 
- */
+	/**Return an Activity logged by the user 
+	 * @return an instance of Activity (Workout or Sleep) 
+	 * 		   or null if there was an error logging in an activity
+	 * @see logWorkout()
+	 * @see logSleep()
+	 * 
+	 */
 	public Activity logActivity(){
 		System.out.println("What kind of activity would you like to log?");
+		System.out.println("Workout or Sleep?");
 		String choice = userInput.nextLine();
 		if(choice.equals("workout")){
 			Workout w1 = logWorkout();
@@ -36,15 +36,16 @@ public class ActivityLogger {
 		else{
 			System.out.println("Couldn't log activity");
 		}
-		
+
 		return null;
 	}
-/**Return an instance of Workout
- * 
- * @return Run, Swim (Workout subclasses) or null if there was an error creating a new instance of type Workout
- * @see logRun()
- * @see logSwim()
- */
+	/**Return an instance of Workout
+	 * 
+	 * @return Run, Swim (Workout subclasses) or null if there was an error 
+	 * creating a new instance of type Workout
+	 * @see logRun()
+	 * @see logSwim()
+	 */
 	private Workout logWorkout (){
 		System.out.println("What kind of workout did you do?");
 		String workoutChoice = userInput.nextLine();
@@ -63,7 +64,7 @@ public class ActivityLogger {
 	 * on his or her run and return an 
 	 * instance of Run 
 	 * @return r1, a newly created Run instance
-	 * @see Run.java
+	 * @see Run
 	 */
 	private Run logRun(){
 		System.out.println("Run duration in minutes: ");
@@ -71,9 +72,16 @@ public class ActivityLogger {
 		System.out.println("Number of Km run: ");
 		int km = userInput.nextInt();
 		Run r1 = new Run (accountID, duration, false, km);
+		userInput.nextLine();
 		return r1;
 	}
 
+	/**Prompt the user for details
+	 * on his or her swim and return
+	 * an object of type Swim
+	 * @return sw1, a new Swim instance
+	 * @see Swim
+	 */
 	private Swim logSwim(){
 		System.out.println("Swim duration in minutes: ");
 		int duration = userInput.nextInt();
@@ -86,9 +94,16 @@ public class ActivityLogger {
 		if(numCycles > 0){
 			sw1.setNumCycles(numCycles);
 		}
+		userInput.nextLine();
 		return sw1;		
 	}
 
+	/**Prompt the user for details
+	 * on his or her sleep (does the user want
+	 * to log a nap, or overnight sleep?)
+	 * @return s1, an object of type Sleep
+	 * @see Sleep
+	 */
 	public Sleep logSleep(){
 		boolean isNap = false;
 		System.out.println("Would you like to log a nap?: ");
@@ -98,9 +113,8 @@ public class ActivityLogger {
 		System.out.println("Length of sleep in minutes: ");
 		int duration = userInput.nextInt();
 		Sleep s1 = new Sleep(accountID, duration, false, isNap);
+		userInput.nextLine();
 		return s1;
 	}
-
-
 
 }

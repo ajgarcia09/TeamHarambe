@@ -1,9 +1,9 @@
 /** A subclass of Activity that allows
  * creation of different kinds of workouts
  * @author Ana J. Garcia
- * @see Activity.java
- * @see Run.java
- * @see Swim.java
+ * @see Activity
+ * @see Run
+ * @see Swim
  *
  */
 public class Workout extends Activity{	
