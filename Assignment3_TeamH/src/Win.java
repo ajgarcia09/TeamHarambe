@@ -1,5 +1,4 @@
-
-public class Win {
+import java.lang.*;public class Win {
 	/*public User(int accountID, String name, String userName, String email, String password, boolean isNewMember) {
 		this.accountID = accountID;
 		this.name = name;
@@ -15,6 +14,10 @@ public class Win {
 		user1.logActivity();
 		System.out.println(user1.getName());
 		user1.printActivities();
+		user1.newDailyTrend();
+		user1.printDailyTrends();
+//		Run r1 = new Run(1234,20,true,5);
+//		System.out.println("r1's getClass = " + r1.getClass().getSuperclass());
 
 	}
 
