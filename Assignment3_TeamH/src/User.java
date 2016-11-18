@@ -1,7 +1,5 @@
 import java.util.*;
-/* TODO we need to link the user to an account
- * 
- */
+
 /**Represents a user of the Activity Tracking System.
  * Each user has various fields and methods for
  * storing and computing sleep and workout data 
