@@ -6,39 +6,65 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
+/** An account class to register and log in user.
+ * 
+ * @author Hector Cervantes
+ *  @version 1.0 (11/10/16)
+ *  @since version 1.0
+ */
+
 public class Account {
 	static int id;
 	static String email;
 	static String password;
 
-	public static void main(String[] args) throws FileNotFoundException{
-
-			boolean isUsingApp = true;
-			while(isUsingApp){
-				Scanner input = new Scanner(System.in);
-				System.out.println("What operation would you like to do?");
-				System.out.println("Enter 1 to sign in");
-				System.out.println("Enter 2 to create account");
-				System.out.println("Enter any other number to exit program");
-				int operation = input.nextInt();
-				if(operation == 1){//if user wants to sign in
-					 getAccountID2();
-					int signInn = id;
-					if(id != 0)
-						System.out.println("You have signed in. This is your user ID:" + signInn);
-					    System.out.println(" ");
-					}
-				else if(operation == 2){
+	/** Asks user whether to sign in or sign up
+	 * @throws FileNotFoundException if file is not found or does not exist
+	 * */
+	public static boolean logInPage(boolean test, int operation) throws FileNotFoundException{
+		boolean isUsingApp = true;
+		boolean signedIn = false;
+		Scanner input = new Scanner(System.in);
+		int operation1 = 0;
+		while(isUsingApp){
+			if(test){
+				operation1 = operation;
+			}
+			else{
+			System.out.println("What operation would you like to do?");
+			System.out.println("Enter 1 to sign in");
+			System.out.println("Enter 2 to create account");
+			System.out.println("Enter any other number to exit program");
+			operation1 = input.nextInt();
+			}
+			if(operation1 == 1){
+				if(!test){
+				retrieveAccountID();
+				}// used to retrieve user info
+				if(id != 0){
+					System.out.println("You have signed inn. This is your user ID:" + id);
+					return true;
+				}
+				System.out.println(" ");
+			}
+			else if(operation1 == 2){
+				if(!test){
 					createAccount();
 				}
-				else{
-					isUsingApp = false;
-				}
+				return true;
 			}
+			else{
+				isUsingApp = false;
+				
+			}
+		}
+		
+		return false;
 	}
-	
-	//user wants to sign in 
-	public static void getAccountID2() throws FileNotFoundException{
+	/** Asks user for log in information to retrieve id.
+	 * @throws FileNotFoundException if file is not found or does not exist
+	 * */
+	public static void retrieveAccountID() throws FileNotFoundException{
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter your email: ");
 		email = input.nextLine();
@@ -46,15 +72,22 @@ public class Account {
 		password = input.nextLine();
 		id = getAccountID();
 		int id2 = id;
+		
 		//User user1 = new User(id);
 	}
-
+	
+	/** Checks if a user exists within the text file, if so 
+	 * returns the user id.
+	 * @throws FileNotFoundException if file is not found or does not exist
+	 * @return user id to retrieve user information 
+	 * @see Accounts.txt 
+	 * */
 	public static int getAccountID() throws FileNotFoundException{
-
+		
 		try {
 			File testFile = new File("Accounts.txt");
 			Scanner readFile = new Scanner(testFile);
-		
+
 			while(readFile.hasNextLine()){
 				String name = readFile.nextLine();
 				String email2 = readFile.nextLine();
@@ -66,11 +99,10 @@ public class Account {
 					readFile.close();
 					return 0;
 				}
-				//validate email and password
 				if(email2.equals(email) && password2.equals(password)){
 					readFile.close();
 					return id;
-					}
+				}
 				readFile.nextLine();
 			}
 			readFile.close();
@@ -84,7 +116,11 @@ public class Account {
 
 		return 0;
 	}
-
+	/** Creates a user account with email, password and user ID. If the email entered does not 
+	 * exist in the system, it wont create the account.
+	 * @throws FileNotFoundException if file is not found or does not exist
+	 * @see Accounts.txt
+	 * */
 	public static void createAccount() throws FileNotFoundException{
 
 		Scanner input = new Scanner(System.in);
@@ -137,7 +173,11 @@ public class Account {
 		System.out.println(" ");
 	}
 
-
+	/** Checks if an email exists to prevent duplicate emails.
+	 * @throws FileNotFoundException if file is not found or does not exist
+	 * @return true if email exists in the text file
+	 * @see Accounts.txt
+	 * */
 	public static boolean checkEmailExists() {
 		try{
 			try{
@@ -165,35 +205,40 @@ public class Account {
 		}
 		return false;
 	}
-
-	public static boolean checkAccountExists() throws FileNotFoundException{
-		try{
-			try{
-				File testFile = new File("Accounts.txt");
-				Scanner readFile = new Scanner(testFile);
-				String currentLine;
-				while(readFile.hasNext()){
-					String name = readFile.nextLine();
-					String email2 = readFile.nextLine();
-					String password2 = readFile.nextLine();
-					id = readFile.nextInt();
-					readFile.nextLine();
-					if(email2.equals(email) && password2.equals(password)){
-						return true;
-					}
-				}
-				readFile.close();
-			}
-			catch(NoSuchElementException e1){
-				return false;
-			}
-		}
-		catch(FileNotFoundException e2){
-			System.out.println("No file found");
-		}
-
-		return false;
+	
+	/** Updates the value of email
+	 * @parameter it takes in the new email
+	 * */
+	public void setEmail(String e){
+		email = e;
 	}
+	
+	/** Returns the value of email
+	 * @return user email 
+	 * */
+	public String getEmail(){
+		return email;
+	}
+	
+	/** Updates the value of password
+	 * @parameter it takes in the new password
+	 * */
+	public void setPassword(String p ){
+		password = p;
+	}
+	
+	/** Returns the value of email
+	 * @return user password
+	 * */
+	public String getPassword(){
+		return password;
+	}
+	/** Updates user id
+	 * @param new id
+	 * */
+	public void setID(int i) {
+		id = i;
+		
+	}
+	
 }
-
-

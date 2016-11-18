@@ -292,16 +292,13 @@ public class User {
 	 * @see User#activities
 	 * @see Activity
 	 */
-	private int countDaySleepTime() {
+	public int countDaySleepTime() {
 		int daySleep =0;
 		for(Iterator it = activities.iterator(); it.hasNext();){
 			Activity currentActivity = (Activity)it.next();
-			System.out.println("currentActivity is of type: ");
 			System.out.println(currentActivity.getClass().getTypeName());
-			if(currentActivity.getClass().getTypeName().equals("Sleep")){
-				daySleep += currentActivity.getDuration();
-				System.out.println("daySleep = " + daySleep);
-			}
+			if(currentActivity.getClass().getTypeName().equals("Sleep"))
+				daySleep += currentActivity.getDuration();			
 		}
 		return daySleep;
 	}
@@ -313,16 +310,14 @@ public class User {
 	 * @see User#activities
 	 * @see Activity
 	 */
-	private int countDayWorkoutTime() {
+	public int countDayWorkoutTime() {
 		int dayWorkout =0;
 		for(Iterator it = activities.iterator(); it.hasNext();){
 			Activity currentActivity = (Activity)it.next();
 			currentActivity.printActivityType(currentActivity);
-			if(currentActivity.getClass().getSuperclass().getTypeName().equals("Workout")){
+			if(currentActivity.getClass().getSuperclass().getTypeName().equals("Workout"))
 				dayWorkout += currentActivity.getDuration();
-				System.out.println("dayWorkout = " + dayWorkout);
 			}
-		}
 		return dayWorkout;
 	}
 	public WeeklyTrend newWeeklyTrend(){

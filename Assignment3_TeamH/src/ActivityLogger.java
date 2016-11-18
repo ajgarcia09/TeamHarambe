@@ -17,8 +17,8 @@ public class ActivityLogger {
 	/**Return an Activity logged by the user 
 	 * @return an instance of Activity (Workout or Sleep) 
 	 * 		   or null if there was an error logging in an activity
-	 * @see logWorkout()
-	 * @see logSleep()
+	 * @see ActivityLogger#logWorkout()
+	 * @see ActivityLogger#logSleep()
 	 * 
 	 */
 	public Activity logActivity(){

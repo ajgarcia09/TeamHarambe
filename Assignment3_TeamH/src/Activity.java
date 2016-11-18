@@ -72,7 +72,7 @@ public class Activity {
 	/**Prints the subclass type of an 
 	 * instance of type activity 
 	 * @param activity1 an activity whose type needs to be printed
-	 * @see User.java
+	 * @see User
 	 */
 	public void printActivityType(Activity activity1){
 		System.out.println("Activity is of type:  " +  activity1.getClass().getTypeName());

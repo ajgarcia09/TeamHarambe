@@ -17,8 +17,7 @@ public class Win {
 		System.out.println(user1.getName());
 		user1.printActivities();
 		user1.newDailyTrend();
-		user1.printDailyTrends();
-	
+		user1.printDailyTrends();	
 	}
 
 }
