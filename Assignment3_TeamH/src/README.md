@@ -1,10 +1,10 @@
 #Assignment 4: UML Class Diagram and State Machine Implementation
 
-This repository was created by:
+##This repository was created by:
 
--Ricardo Alvarez: ralvarez14
--Hector Cervantes: HectorCervantes95
--Ana Garcia: ajgarcia09
+#####-Ricardo Alvarez: ralvarez14
+#####-Hector Cervantes: HectorCervantes95
+#####-Ana Garcia: ajgarcia09
 
 and it contains files for the following tasks:
 
