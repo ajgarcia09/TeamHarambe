@@ -1,11 +1,19 @@
 import java.util.*;
-
+/**
+ * A child of Trend, used to keep track 
+ * of the user's weekly sleep and 
+ * exercise trends
+ * @author Ana J. Garcia
+ * @version 1.0 (11/17/2016)
+ * @see Trend
+ *
+ */
 public class WeeklyTrend extends Trend{
-	HashMap<String, DailyTrend> weeklyTrend = new HashMap<String, DailyTrend>();
+	
 
-	public WeeklyTrend(int accountID, int sleepTime, int workoutTime, int numSteps) {
-		super(accountID, sleepTime, workoutTime, numSteps);
-		// TODO Auto-generated constructor stub
+	public WeeklyTrend(int accountID, int sleepTime, int workoutTime, int numSteps, String month) {
+		super(accountID, sleepTime, workoutTime, numSteps, month);
+		
 	}
 	
 	

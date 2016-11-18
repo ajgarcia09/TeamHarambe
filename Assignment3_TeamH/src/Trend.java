@@ -55,21 +55,47 @@ public class Trend {
 		return numSteps;
 	}
 
+	/**
+	 * 
+	 * @return month - the month in which
+	 * the current activity is being logged into
+	 */
 	public String getMonth() {
 		return month;
 	}
+	/**
+	 * 
+	 * @param accountID - the user's unique 
+	 * account number which is used to link
+	 * the user to his or her Activities
+	 */
 	public void setAccountID(int accountID) {
 		this.accountID = accountID;
 	}
 
+	/**
+	 * 
+	 * @param sleepTime - the user's total 
+	 * sleep time
+	 */
 	public void setSleepTime(int sleepTime) {
 		this.sleepTime = sleepTime;
 	}
 
+/**
+ * 	
+ * @param workoutTime the user's total 
+ * workout time
+ */
 	public void setWorkoutTime(int workoutTime) {
 		this.workoutTime = workoutTime;
 	}
 
+	/**
+	 * 
+	 * @param numSteps the user's total
+	 * number of steps taken
+		 */
 	public void setNumSteps(int numSteps) {
 		this.numSteps = numSteps;
 	}

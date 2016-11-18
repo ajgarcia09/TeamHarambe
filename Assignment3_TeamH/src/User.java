@@ -11,6 +11,7 @@ import java.util.*;
  * @see Trend
  *
  */
+
 public class User {
 	private int accountID;
 	private String name;
@@ -21,7 +22,7 @@ public class User {
 	private int age;
 	private int height;
 	private int weight;
-	private int bmi; //TODO add method to compute BMI, metric or US system?
+	private int bmi; 
 	private static int numDayTrends;
 	private static int numWeekTrends;
 	private static int numDaySleep;
@@ -32,7 +33,6 @@ public class User {
 	private static int numWeekSteps;
 	private ActivityLogger activityLogger = new ActivityLogger(accountID);
 	private HashSet<Activity> activities = new HashSet<Activity>();
-	//TODO ArrayList instead of HashSet?
 	private HashSet<DailyTrend> dailyTrends = new HashSet<DailyTrend>();
 	private HashSet<WeeklyTrend> weeklyTrends = new HashSet<WeeklyTrend>();
 	private HashSet<MonthlyTrend> MonthlyTrends = new HashSet<MonthlyTrend>();
@@ -110,50 +110,76 @@ public class User {
 	public int getBmi(){
 		return bmi;
 	}	
-
+/**
+ * 
+ * @param accountID the user's unique account number
+ */
 	public void setAccountID(int accountID) {
 		this.accountID = accountID;
 	}
-
+/**
+ * 
+ * @param name the user's name
+ */
 	public void setName(String name) {
 		this.name = name;
 	}
-
+/**
+ * 
+ * @param userName the user's choice of userName
+ */
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-
+/**
+ * 
+ * @param email the user's email
+ */
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
+/**
+ * 
+ * @param password the user's password
+ */
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+/**
+ * 
+ * @param isNewMember whether the user is a new 
+ * member or he or she has been previously registered
+ */
 	public void setNewMember(boolean isNewMember) {
 		this.isNewMember = isNewMember;
 	}
-
+/**
+ * 
+ * @param age the user's age
+ */
 	public void setAge(int age) {
 		this.age = age;
 	}
-
+/**
+ * 
+ * @param height the user's height
+ */
 	public void setHeight(int height) {
 		this.height = height;
 	}
-
+/**
+ * 
+ * @param weight the user's weight
+ */
 	public void setWeight(int weight) {
 		this.weight = weight;
 	}
-
+/**
+ * 
+ * @param bmi the user's Body Mass Index (BMI)
+ */
 	public void setBmi(int bmi) {
 		this.bmi = bmi;
-	}
-	
-	//TODO	implement this. Are we using metric, or US system?
-	public int computeBMI(){
-		return -1;
 	}
 	
 	/**Creates a new object of type Activity and adds
@@ -212,7 +238,6 @@ public class User {
 	 * @see DailyTrend
 	 */
 	public DailyTrend newDailyTrend(){
-		System.out.println("entered newDailyTrend");
 		int daySleep = countDaySleepTime();
 		int dayWorkout = countDayWorkoutTime();
 		int daySteps = 10000; //10,000 steps, fixed value for now
@@ -229,8 +254,6 @@ public class User {
 	 */
 	
 	public void printDailyTrends(){
-		System.out.println("entered printDailyTrends");
-		System.out.println();
 		for(Iterator it = dailyTrends.iterator(); it.hasNext();){
 			DailyTrend currentDayTrend = (DailyTrend)it.next();
 			System.out.println("user: " + this.getName());
@@ -293,20 +316,15 @@ public class User {
 	 * @see Activity
 	 */
 	private int countDayWorkoutTime() {
-		System.out.println("entered countDayWorkoutTime");
 		int dayWorkout =0;
 		for(Iterator it = activities.iterator(); it.hasNext();){
 			Activity currentActivity = (Activity)it.next();
 			currentActivity.printActivityType(currentActivity);
-			System.out.println("current activity's duration: " + currentActivity.getDuration());
-			System.out.println(currentActivity.getClass().getSuperclass());
 			if(currentActivity.getClass().getSuperclass().getTypeName().equals("Workout")){
-				System.out.println("entered if statement in workout");
 				dayWorkout += currentActivity.getDuration();
 				System.out.println("dayWorkout = " + dayWorkout);
 			}
 		}
-		System.out.println("end of method, dayWorkout= " + dayWorkout);
 		return dayWorkout;
 	}
 	public WeeklyTrend newWeeklyTrend(){

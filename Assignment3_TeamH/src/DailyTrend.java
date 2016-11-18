@@ -1,4 +1,13 @@
 import java.util.*;
+/**
+ * A child of Trend, used to keep track 
+ * of the user's daily sleep and 
+ * exercise trends
+ * @author Ana J. Garcia
+ * @version 1.0 (11/17/2016)
+ * @see Trend
+ *
+ */
 
 public class DailyTrend extends Trend{
 	private boolean isNewDay = true;
@@ -9,26 +18,42 @@ public class DailyTrend extends Trend{
 		this.date = date;		
 	}
 	
+	/**
+	 * @return isNewDay boolean
+	 * that determines whether data for 
+	 * a new day will be entered
+	 */
+	public boolean getIsNewDay(){
+		return isNewDay;
+	}
+	
+	/**
+	 * 
+	 * @return date - an integer that 
+	 * holds the day of the month
+	 * for which data was saved
+	 */
 	public int getDate(){
 		return date;
-	}
-
+	}	
 	
-	
-
-	/**If data for a new day was entered,
-	 * increment dayCount as long as data for 7 
-	 * consecutive days hasn't been entered.
-	 * If dayCount is equal to 7, then we have
-	 * a week's worth of data, and we need to
-	 * reset dayCount to 0 in order to store
-	 * data for another week.
+	/**
+	 * 
+	 * @param isNewDay a boolean that determines
+	 * whether data for a new day will be entered
 	 */
-
+	public void setIsNewDay(boolean isNewDay){
+		this.isNewDay = isNewDay;
+	}
 	
-	
-
-		
+	/**
+	 * 
+	 * @param date the day of the month
+	 * for which the data is being entered
+	 */
+	public void setDate(int date){
+		this.date = date;
+	}
 	
 
 }

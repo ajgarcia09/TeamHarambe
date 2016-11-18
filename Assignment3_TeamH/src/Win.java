@@ -1,7 +1,16 @@
+/**
+ * Driver to test out creating a user within 
+ * the system and logging in activities, as well
+ * as creating a daily trend of activities
+ * @author Ana J. Garcia
+ * @version 1.0 (11/17/2016)
+ * @see User
+ *
+ */
 public class Win {
 	public static void main(String[] args) {
-		User user1 = new User(12345,"Ana","anaj","anaj@gmail.com","velvet",false);
-	
+		
+		User user1 = new User(12345,"Ana","anaj","anaj@gmail.com","velvet",false);	
 		user1.logActivity();
 		user1.logActivity();
 		user1.logActivity();
@@ -9,13 +18,7 @@ public class Win {
 		user1.printActivities();
 		user1.newDailyTrend();
 		user1.printDailyTrends();
-		
-//		Sleep s1 = new Sleep(1234,30,true,false);
-//		System.out.println("s1's getClass = " + s1.getClass().getSuperclass());
-//		System.out.println("s1 is a " + s1.getClass());
-//		System.out.println();
-		
-
+	
 	}
 
 }

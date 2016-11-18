@@ -66,7 +66,7 @@ public class ActivityLogger {
 	 * @return r1, a newly created Run instance
 	 * @see Run
 	 */
-	private Run logRun(){
+	public Run logRun(){
 		System.out.println("Run duration in minutes: ");
 		int duration = userInput.nextInt();
 		System.out.println("Number of Km run: ");
@@ -82,7 +82,7 @@ public class ActivityLogger {
 	 * @return sw1, a new Swim instance
 	 * @see Swim
 	 */
-	private Swim logSwim(){
+	public Swim logSwim(){
 		System.out.println("Swim duration in minutes: ");
 		int duration = userInput.nextInt();
 		System.out.println("Number of laps: ");
