@@ -1,4 +1,4 @@
-Assignment 3: UML Class Diagram and State Machine Implementation
+#Assignment 4: UML Class Diagram and State Machine Implementation
 
 This repository was created by:
 
@@ -9,28 +9,21 @@ This repository was created by:
 and it contains files for the following tasks:
 
 Task 1:
-	Implementation of a Class Diagram for an online store:
-	User.java
-	Customer.java
-	Manager.java
-	CreditCard.java
-	Cart.java
-	Item.java
-	Book.java
-	MusicCD.java
-	ComputerSoftware.java
-	EStore.java (creates and runs sample test cases for each of the previously mentioned files).
+	Generate Javadoc for each of the classes to be
+	used in our Activity Tracking System. All Javadoc
+	can be found in the doc directory in the path:
+	TeamHarambe/Assignment3_TeamH/doc 
 
 Task 2:
-	Implementation of a state machine's behavior:
-	StateMachine.java
+	Test some of our implemented use cases using JUnit Testing.
+	All JUnit files have te word "Test" in the title, and they
+	are found within the src directory:
+	TeamHarambe/Assignment3_TeamH/src
 	
 Task 3:
 	Implementation of three use cases for our Activity Tracking System:
-	 Account.java - used to create/sign into an account
-	 Accounts.txt - account data is stored here
-	 SetFitnessGoals.java - allows the user to set up and manage his or her fitness goals
-	 RemindersAlarm.java - allows the user to set up and manage reminders and alarms
-	 *Please note that since these files represent only a fraction of the tracking system, all functionalities are not fully implemented.
-	 
+	 Viewing the user's summary of activities - User.java, Activity.java
+	 Viewing pre-made workouts/View user's profile - Goals.java, Profile.java, myProfile.java
+	 Set up reminders - Reminder.java, Setting.java
+	  
 	 
