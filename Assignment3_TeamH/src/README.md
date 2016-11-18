@@ -24,6 +24,6 @@ Task 3:
 	Implementation of three use cases for our Activity Tracking System:
 	 Viewing the user's summary of activities - User.java, Activity.java
 	 Viewing pre-made workouts/View user's profile - Goals.java, Profile.java, myProfile.java
-	 Set up reminders - Reminder.java, Setting.java
+	 Logging an activity - Activity.java, ActivityLogger.java
 	  
 	 
